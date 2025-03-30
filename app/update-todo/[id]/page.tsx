@@ -13,7 +13,7 @@ export default async function Page({ params }: { params: { id: string } }) {
   const { id } = params;
 
   const data: Todo | null = await db.todo.findUnique({
-    where: { id },
+    where: { id: id },
   });
 
   return (
