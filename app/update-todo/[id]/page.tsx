@@ -9,11 +9,11 @@ interface Todo {
   category: string;
 }
 
-const GetSingleTodo = async ({ params }: { params: { id: string } }) => {
+export default async function Page({ params }: { params: { id: string } }) {
   const { id } = params;
 
   const data: Todo | null = await db.todo.findUnique({
-    where: { id: id },
+    where: { id },
   });
 
   return (
@@ -91,6 +91,4 @@ const GetSingleTodo = async ({ params }: { params: { id: string } }) => {
       </div>
     </div>
   );
-};
-
-export default GetSingleTodo;
+}
