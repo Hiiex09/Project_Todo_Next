@@ -19,7 +19,7 @@ const TodoComponent = () => {
       await action.createTodo(formData); // Call server action
       toast.success("New Todo added!");
       route.push("/");
-    } catch (error) {
+    } catch (_error) {
       toast.error("Failed to add Todo!");
     }
     setLoading(false);
