@@ -10,7 +10,7 @@ interface Todo {
 }
 
 const GetSingleTodo = async ({ params }: { params: { id: string } }) => {
-  const { id } = await params;
+  const { id } = params;
 
   const data: Todo | null = await db.todo.findUnique({
     where: { id: id },
